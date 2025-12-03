@@ -115,7 +115,7 @@ function PassCard({ post }) {
           <PassForm
             text='<i class="fa-regular fa-pen-to-square"></i>'
             post={post}
-            className="bg-transparent border-0"
+            className="bg-transparent border-0 hover:text-white"
           />
         )}
         <button className="text-red-600" onClick={remove}>
