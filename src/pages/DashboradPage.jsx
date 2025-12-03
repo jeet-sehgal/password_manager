@@ -8,7 +8,7 @@ function DashboradPage() {
   const posts = useSelector((state) => state.data.data);
   // console.log(category);
   const filteredData=category=="all"?posts:posts.filter(ele=> ele.category==category)
-  console.log(filteredData)
+  // console.log(filteredData)
   return (
     <div className="pt-20 p-5 md:p-[10lvh] md:pt-[20lvh] flex flex-col gap-5 bg-black">
       <div>

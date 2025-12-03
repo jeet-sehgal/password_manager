@@ -5,6 +5,8 @@ import authservice from "../appwrite/auth";
 import { useDispatch } from "react-redux";
 import { login } from "../store/UserSlice";
 import toast from 'react-hot-toast';
+import dataService from "../appwrite/data";
+import { load } from "../store/MainDataSlice";
 
 function Signup() {
   const dispatch = useDispatch();
@@ -24,9 +26,13 @@ function Signup() {
     try {
       const session = await authservice.signup(data);
       if (session) {
-        const userData = authservice.currentUser();
+        const userData = await authservice.currentUser();
         if (userData) {
           dispatch(login(userData));
+          // console.log("signin",userData)
+          await dataService.getPosts(userData.$id).then((res) => {
+                      dispatch(load(res.rows.map(ele=>{return {...ele,password:decryptData(ele.password)}})));
+                    })
           navigate("/dashboard")
         }
       }
