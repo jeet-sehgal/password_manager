@@ -31,6 +31,6 @@ const MainDataSlice=createSlice({
     }
 })
 
-export const {addData,removeData,updateData,loadData,load}=MainDataSlice.actions
+export const {addData,removeData,updateData,loadData,load,clearData}=MainDataSlice.actions
 
 export default MainDataSlice.reducer

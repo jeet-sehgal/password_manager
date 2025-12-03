@@ -20,7 +20,7 @@ function Signup() {
   const submit = async (data) => {
     setLoading(true)
     setError("");
-    console.log(data);
+    // console.log(data);
     try {
       const session = await authservice.signup(data);
       if (session) {

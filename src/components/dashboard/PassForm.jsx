@@ -65,7 +65,7 @@ function PassForm({ post, text, className }) {
         if (userData) {
           userData.password = real_password;
           dispatch(addData(userData));
-          console.log(userData);
+          // console.log(userData);
           reset();
         }
       } catch (e) {
@@ -75,7 +75,7 @@ function PassForm({ post, text, className }) {
     formRef.current.close();
     setLoading(false);
   };
-  console.log("for", post);
+  // console.log("for", post);
   const [show, setShow] = useState(false);
 
   const generate = () => {

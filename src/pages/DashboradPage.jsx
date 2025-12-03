@@ -6,8 +6,9 @@ function DashboradPage() {
   const [category, setCategory] = useState("all");
 
   const posts = useSelector((state) => state.data.data);
-  console.log(category);
-
+  // console.log(category);
+  const filteredData=category=="all"?posts:posts.filter(ele=> ele.category==category)
+  console.log(filteredData)
   return (
     <div className="pt-20 p-5 md:p-[10lvh] md:pt-[20lvh] flex flex-col gap-5 bg-black">
       <div>
@@ -41,7 +42,7 @@ function DashboradPage() {
             <option value="all" selected>
               All
             </option>
-            <option value="emial">Email</option>
+            <option value="email">Email</option>
             <option value="development">Development</option>
             <option value="shoping">Shoping</option>
             <option value="bank">Bank</option>
@@ -51,16 +52,9 @@ function DashboradPage() {
           </select>
         </div>
       </div>
-      <div className="flex flex-col gap-3 py-5">
-        {category != "all"
-          ? posts.map(
-              (ele) =>
-                ele.category == category && (
-                  <PassCard key={ele.$id} post={ele} />
-                )
-            )
-          : posts.map((ele) => <PassCard key={ele.$id} post={ele} />)}
-      </div>
+      {posts.length!=0&&<div className="flex flex-col gap-3 py-5">
+        {filteredData.length==0?<h1 className="text-xl text-center text-green-400">No Data For This Category</h1>:filteredData.map((ele) => <PassCard key={ele.$id} post={ele} />)}
+      </div>}
       <Pie/>
       
     </div>

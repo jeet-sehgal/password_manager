@@ -22,7 +22,7 @@ function Login() {
   const submit = async (data) => {
     setLoading(true)
     setError("")
-    console.log(data);
+    // console.log(data);
     try {
       const session=await authservice.signin(data);
       if(session){
@@ -36,7 +36,7 @@ function Login() {
         }
       }
     } catch (e) {
-      console.log(JSON.parse(e.response).message);
+      // console.log(JSON.parse(e.response).message);
       setError(JSON.parse(e.response).message)
       toast.error(JSON.parse(e.response).message)
 

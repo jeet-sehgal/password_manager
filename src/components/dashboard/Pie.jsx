@@ -19,7 +19,7 @@ function PieChartDia() {
     else if(ele.type=="weak")data[2].value+=1
   })
   return (
-    <div className="card bg-transparent shadow-xl  ">
+    mainData.length==0?<h1 className="text-2xl text-center md:text-4xl text-green-400">Add a Password</h1>:<div className="card bg-transparent shadow-xl  ">
       <div className="card-body items-center text-center">
         <h2 className="card-title mb-4 text-2xl">Password<span style={{background:
                   "linear-gradient(90deg,rgba(128, 242, 201, 1) 0%, rgba(14, 140, 67, 1) 66%, rgba(3, 107, 79, 1) 100%)",
@@ -51,6 +51,7 @@ function PieChartDia() {
         </PieChart>
       </div>
     </div>
+    
   );
 }
 

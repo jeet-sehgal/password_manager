@@ -36,7 +36,7 @@ function PassCard({ post }) {
     const data = await dataService.deletePost(post.$id);
     dispatch(removeData(post.$id));
   };
-  console.log("post aa gya card mai ", post);
+  // console.log("post aa gya card mai ", post);
   return (
     <div className="flex flex-col md:flex-row justify-between border-1 border-gray-500 hover:shadow-[0_0_5px_3px_rgba(34,197,94,0.6)] transition-all rounded-xl p-5">
       <div className="flex justify-start gap-3">
@@ -92,7 +92,7 @@ function PassCard({ post }) {
                   toast.error("Some Error Occured");
                 }
               }}
-              readonly
+              readOnly
               className="p-2 w-[90%]"
             />
             <button
