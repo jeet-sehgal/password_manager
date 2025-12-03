@@ -37,8 +37,8 @@ function Login() {
       }
     } catch (e) {
       // console.log(JSON.parse(e.response).message);
-      setError(JSON.parse(e.response).message)
-      toast.error(JSON.parse(e.response).message)
+      setError(e.message)
+      toast.error(e.response)
 
     }finally{
         setLoading(false)
