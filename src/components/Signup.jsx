@@ -30,9 +30,7 @@ function Signup() {
         if (userData) {
           dispatch(login(userData));
           // console.log("signin",userData)
-          await dataService.getPosts(userData.$id).then((res) => {
-                      dispatch(load(res.rows.map(ele=>{return {...ele,password:decryptData(ele.password)}})));
-                    })
+          
           navigate("/dashboard")
         }
       }
