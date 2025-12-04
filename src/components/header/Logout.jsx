@@ -23,7 +23,7 @@ function Logout() {
       }
   useEffect(()=>{
     
-     timeRef=setTimeout(()=>{
+     timeRef.current=setTimeout(()=>{
       logoutBtn()
       toast.error("Session ended")
       
